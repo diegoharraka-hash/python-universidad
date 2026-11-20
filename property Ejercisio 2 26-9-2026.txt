@@ -1,0 +1,25 @@
+class Cuentabancaria:
+    def __init__(self , saldo : float):
+        self.saldo = saldo 
+
+    @property
+    def saldo (self):
+        nuevo = self.saldo
+        return nuevo
+
+    @saldo.setter
+    def saldo (self , valor ):
+        if (valor < 0 ):
+            raise ValueError ("el saldo no puede ser negativo")
+
+        return valor 
+  
+
+
+
+
+mibanco = Cuentabancaria(1900.2)
+print (mibanco.mostarSaldo)
+
+mibanco2 = Cuentabancaria(-33)
+print (mibanco2.mostarSaldo)

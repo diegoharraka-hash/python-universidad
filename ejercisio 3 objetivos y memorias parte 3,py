@@ -1,0 +1,54 @@
+class tarea:
+    def __init__(self , titulo : str , descripcion : str , prioridad : int ):
+        self.titulo = titulo
+        self.descripcion = descripcion
+        self.prioridad = prioridad
+        self.estado =  "pendiente "
+
+
+    #parte 1
+    @property
+    def prioridad(self) -> int:
+        return self._prioridad
+
+    @property
+    def estado (self)->str:
+        return self._estado
+
+
+  #parte2
+    @prioridad.setter
+    def prioridad(self , vl)  :
+       if vl > 5 or vl <= 0:
+           raise ValueError ("Error , prioridad invalida") 
+      
+       print (f"la prioridad es : {vl}")
+       self._prioridad = vl # la asignacion va de derecha a izquierda
+    
+       
+       
+
+    #parte 3
+    @estado.setter
+    def estado (self , valor):
+       estados_validos = ["en progreso" , "pendiente" , "finalizada" ]
+       if valor not in estados_validos:
+        raise ValueError ("estado invalido")
+
+       print (valor)
+       self.estado = valor 
+
+
+
+tarea1 = tarea("mates" , "martes" , 2 )
+tarea1.estado = "en progreso"
+tarea1.estado()
+
+
+
+        
+        
+          
+
+
+

@@ -1,0 +1,36 @@
+def crear_alumno(nombre: str , notas:list) -> dict :
+
+    return {"nombre":nombre , "notas" : notas}
+
+
+alumno1 = crear_alumno("Diego" , [7,5,9])
+ 
+lista = []
+lista.append(alumno1)
+print (lista)
+
+import copy
+copia = copy.deepcopy (lista)
+
+print (lista is copia)
+print ("-----original------")
+print (copia)
+
+print("------profunda------") # cambia en solo una porque copia es diferente a lista
+
+copia[0]['notas'][1] = 10 # modificamos el valor interno por indice donde ponia 5 se remplaza por 10 
+print ("----ya modificado: ----")
+print ("copia:" , copia)
+print ("lista:" , lista)
+
+print ("-------superificial:------- ") # cambian en las tres 
+superficial = copy.copy (lista)
+superficial[0]['notas'][1] = 10
+print ("copia:" , copia)
+print ("lista:" , lista)
+print ("superfical:" , superficial)
+
+
+
+
+
